@@ -208,7 +208,11 @@ def main(page: ft.Page):
     btn19 = ElevatedButton(content=ft.Image(src="Pages.jpg", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Larry Page"), on_click=play_pages)
     btn20 = ElevatedButton(content=ft.Image(src="Brin.webp", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Sergey Brin"), on_click=play_brin)
     
-    # Botones Tipos de lenguaje 
+    # Botones Tipos de lenguajes
+    btn21 = ElevatedButton(content=ft.Image(src="fortran.png",Width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"))
+    btn22 = ElevatedButton(content=ft.Image(src="fortran.png",Width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"))
+    btn23 = ElevatedButton(content=ft.Image(src="fortran.png",Width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"))
+    btn24 = ElevatedButton(content=ft.Image(src="fortran.png",Width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"))
     
     # Manejo del cambio de ruta
     def route_change(route):
