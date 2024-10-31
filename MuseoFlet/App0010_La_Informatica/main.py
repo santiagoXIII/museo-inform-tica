@@ -246,11 +246,16 @@ def main(page: ft.Page):
     btn22 = ElevatedButton(content=ft.Image(src="cobol.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="cobol"), on_click=play_cobol)
     btn23 = ElevatedButton(content=ft.Image(src="pascal.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"), on_click=play_pascal2)
     btn24 = ElevatedButton(content=ft.Image(src="c.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="C"),on_click=play_c)
+    
     btn25 = ElevatedButton(content=ft.Image(src="html.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="html"))
     btn26 = ElevatedButton(content=ft.Image(src="python.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="python"))
     btn27 = ElevatedButton(content=ft.Image(src="sql.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="sql"))
     btn28 = ElevatedButton(content=ft.Image(src="php.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="php"))
     
+    btn29 = ElevatedButton(content=ft.Image(src="java.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="java"))
+    btn30 = ElevatedButton(content=ft.Image(src="javascrip.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="javascrip"))
+    btn31 = ElevatedButton(content=ft.Image(src="perl.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="perl"))
+    btn32 = ElevatedButton(content=ft.Image(src="swift.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="swift"))
     # Manejo del cambio de ruta
     def route_change(route):
         # Limpia las vistas anteriores
@@ -394,6 +399,10 @@ def main(page: ft.Page):
                                     ft.Row(
                                         alignment="center",
                                         controls=[btn25,btn26,btn27,btn28]
+                                    ),
+                                    ft.Row(
+                                        alignment="center",
+                                        controls=[btn29,btn30,btn31,btn32]
                                     )
                                 ],
                                 alignment=ft.MainAxisAlignment.START
