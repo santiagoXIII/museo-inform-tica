@@ -3,7 +3,7 @@ from flet import AppBar, ElevatedButton, View
 
 def main(page: ft.Page):
     page.title = "La historia de la Informática"
-    page.bgcolor = "#61A707"
+    page.bgcolor = "#08283f"
     page.window_width = 650
     page.window_height = 800
     
@@ -91,6 +91,21 @@ def main(page: ft.Page):
     c = ft.Audio(src="c.mp3",volume=1, balance=0)
     page.overlay.append(c)
     
+    html = ft.Audio(src="html.mp3",volume=1,balance=0)
+    page.overlay.append(html)
+    
+    python = ft.Audio(src="python.mp3",volume=1,balance=0)
+    page.overlay.append(python)
+    
+    sql = ft.Audio(src="sql.mp3",volume=1,balance=0)
+    page.overlay.append(sql)
+    
+    php = ft.Audio(src="php.mp3",volume=1,balance=0)
+    page.overlay.append(php)
+    
+    java = ft.Audio(src="java.mp3",volume=1,balance=0)
+    page.overlay.append(java)
+    
     def StopAll():
         intro.pause()
         Pascal.pause()
@@ -117,6 +132,11 @@ def main(page: ft.Page):
         cobol.pause()
         pascal.pause()
         c.pause()
+        html.pause()
+        python.pause()
+        sql.pause()
+        php.pause()
+        java.pause()
     
     def play_intro(e):
         StopAll()
@@ -217,7 +237,26 @@ def main(page: ft.Page):
     def play_c(e):
         StopAll()
         c.play()
-        
+    
+    def play_html(e):
+        StopAll()
+        html.play()
+    
+    def play_python(e):
+        StopAll()
+        python.play()
+    
+    def play_sql(e):
+        StopAll()
+        sql.play()
+    
+    def play_php(e):
+        StopAll()
+        php.play()
+    
+    def play_java(e):
+        StopAll()
+        java.play()
     
     # Botones Padres de la informática con imágenes y etiquetas semánticas
     btn1 = ElevatedButton(content=ft.Image(src="Pascal.jpeg", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Blaise Pascal"), on_click=play_pascal)
@@ -246,11 +285,16 @@ def main(page: ft.Page):
     btn22 = ElevatedButton(content=ft.Image(src="cobol.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="cobol"), on_click=play_cobol)
     btn23 = ElevatedButton(content=ft.Image(src="pascal.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"), on_click=play_pascal2)
     btn24 = ElevatedButton(content=ft.Image(src="c.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="C"),on_click=play_c)
-    btn25 = ElevatedButton(content=ft.Image(src="html.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="html"))
-    btn26 = ElevatedButton(content=ft.Image(src="python.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="python"))
-    btn27 = ElevatedButton(content=ft.Image(src="sql.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="sql"))
-    btn28 = ElevatedButton(content=ft.Image(src="php.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="php"))
     
+    btn25 = ElevatedButton(content=ft.Image(src="html.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="html"),on_click=play_html)
+    btn26 = ElevatedButton(content=ft.Image(src="python.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="python"),on_click=play_python)
+    btn27 = ElevatedButton(content=ft.Image(src="sql.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="sql"),on_click=play_sql)
+    btn28 = ElevatedButton(content=ft.Image(src="php.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="php"),on_click=play_php)
+    
+    btn29 = ElevatedButton(content=ft.Image(src="java.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="java"),on_click=play_java)
+    btn30 = ElevatedButton(content=ft.Image(src="javascrip.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="javascrip"))
+    btn31 = ElevatedButton(content=ft.Image(src="perl.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="perl"))
+    btn32 = ElevatedButton(content=ft.Image(src="swift.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="swift"))
     # Manejo del cambio de ruta
     def route_change(route):
         # Limpia las vistas anteriores
@@ -322,6 +366,10 @@ def main(page: ft.Page):
                                         'Volver al inicio',
                                         on_click=lambda _: page.go('/')
                                     ),
+                                    ElevatedButton(
+                                        'Ir a "la evolucion de los lenguajes de informatica"',
+                                        on_click=lambda _: page.go('/lenguajes')
+                                    ),
                                     ft.Row(
                                         alignment="center",
                                         controls=[
@@ -383,10 +431,10 @@ def main(page: ft.Page):
                                         on_click=lambda _: page.go('/')
                                     ),
                                     ElevatedButton(
-                                        'Los padres de la informática',
-                                        on_click=lambda _: page.go('/padres')
+                                        'Ir a "las redes sociales"',
+                                        on_click=lambda _: page.go('/redes')
                                     ),
-                                    ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
+                                    ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:",color="white", size=15),
                                     ft.Row(
                                         alignment="center",
                                         controls=[btn21,btn22,btn23,btn24]
@@ -394,6 +442,10 @@ def main(page: ft.Page):
                                     ft.Row(
                                         alignment="center",
                                         controls=[btn25,btn26,btn27,btn28]
+                                    ),
+                                    ft.Row(
+                                        alignment="center",
+                                        controls=[btn29,btn30,btn31,btn32]
                                     )
                                 ],
                                 alignment=ft.MainAxisAlignment.START
@@ -422,8 +474,8 @@ def main(page: ft.Page):
                                         on_click=lambda _: page.go('/')
                                     ),
                                     ElevatedButton(
-                                        'Los padres de la informática',
-                                        on_click=lambda _: page.go('/padres')
+                                        'Ir a "la informatica durante la pandemia"',
+                                        on_click=lambda _: page.go('/pandemia')
                                     ),
                                     ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
                                     ft.Row(
@@ -457,8 +509,8 @@ def main(page: ft.Page):
                                         on_click=lambda _: page.go('/')
                                     ),
                                     ElevatedButton(
-                                        'Los padres de la informática',
-                                        on_click=lambda _: page.go('/padres')
+                                        'Ir a "las nuevas tecnologias"',
+                                        on_click=lambda _: page.go('/nuevas')
                                     ),
                                     ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
                                     # Aquí puedes agregar el contenido específico para la sección de lenguajes de programación
@@ -487,10 +539,6 @@ def main(page: ft.Page):
                                     ElevatedButton(
                                         'Volver al inicio',
                                         on_click=lambda _: page.go('/')
-                                    ),
-                                    ElevatedButton(
-                                        'Los padres de la informática',
-                                        on_click=lambda _: page.go('/padres')
                                     ),
                                     ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
                                     # Aquí puedes agregar el contenido específico para la sección de lenguajes de programación
